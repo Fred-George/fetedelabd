@@ -1,0 +1,9 @@
+global:
+  version: 1.0
+  css:
+    base:
+      css/visit.css: {}
+  js:
+    js/visit.js: {}
+  dependencies:
+    - core/jquery
