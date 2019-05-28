@@ -5,5 +5,6 @@ global:
       css/visit.css: {}
   js:
     js/visit.js: {}
+    js/jquery.sticky.js: {}
   dependencies:
     - core/jquery

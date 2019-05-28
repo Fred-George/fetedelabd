@@ -11,7 +11,7 @@
   Drupal.behaviors.exampleBehavior = {
     attach: function (context, settings) {
       $(document).ready(function () {
-
+        $("#header").sticky({ topSpacing: 0, zIndex: 450 });
       });
       
       

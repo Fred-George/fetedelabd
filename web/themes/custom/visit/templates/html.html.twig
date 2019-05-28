@@ -36,55 +36,22 @@ db_offline ? 'db-offline',
 <!DOCTYPE html>
 <html{{ html_attributes }} class="no-js">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1957355-18"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-1957355-18');
-    </script>
     <meta charset="UTF-8">
     <head-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
-    <!-- Facebook Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window,document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-
-    fbq('init', '1056824954338666'); 
-    fbq('track', 'PageView');
-    </script>
-    <noscript>
-    <img height="1" width="1" 
-    src="https://www.facebook.com/tr?id=1056824954338666&ev=PageView
-    &noscript=1"/>
-    </noscript>
-    <!-- End Facebook Pixel Code -->
   </head>
   <body{{ attributes.addClass(body_classes) }}>
   <a href="#main-content" class="visually-hidden focusable skip-link">
     {{ 'Skip to main content'|t }}
   </a>
   <div id="preloader">
-    <div id="status" style="color: #61bab2" class="la-ball-spin-fade-rotating la-2x">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+    <div id="status" style="color: #e40613" class="la-ball-climbing-dot la-2x">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   </div>
   {{ page_top }}

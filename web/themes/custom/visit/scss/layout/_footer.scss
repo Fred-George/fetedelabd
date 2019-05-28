@@ -1,5 +1,19 @@
 // Cookies policy
 
+footer{
+    padding: 20px 10px 40px 0;
+    background-color: $primary-color;
+    color: $white;
+    font-family: $header-font-family;
+    .social-footer{
+        float: right;
+        .social-icons {
+            a{
+                border-style: none;
+            }
+        }
+    }
+}
 .eu-cookie-compliance-banner{
     padding: 20px 0 0 0;
     background-color: $primary-color;
