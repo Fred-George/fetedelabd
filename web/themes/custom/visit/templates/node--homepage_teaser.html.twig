@@ -1,0 +1,28 @@
+<article id="node-{{ node.id }}" {{ attributes }}>
+{% if content.field_linkto is not empty %}
+<a href="{{ path('entity.node.canonical', {'node': 4}) }}">
+{% endif %}
+  {{ title_prefix }}
+  {% if not page %}
+    <h3{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <div class="posted">
+      {{ author_picture }}
+      <div{{ author_attributes }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </div>
+  {% endif %}
+
+  {# We hide the comments and links now so that we can render them later. #}
+  <div{{ content_attributes }}>
+    {{ content|without('comment', 'links', 'field_tags', 'field_linkto') }}
+  </div>
+{% if content.field_linkto %}
+</a>
+{% endif %}
+</article>
