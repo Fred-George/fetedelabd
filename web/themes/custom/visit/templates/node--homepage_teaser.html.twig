@@ -1,26 +1,34 @@
 <article id="node-{{ node.id }}" {{ attributes }}>
-{% if content.field_linkto is not empty %}
-<a href="{{ path('entity.node.canonical', {'node': 4}) }}">
+{% if content.field_linkto['#items'][0].target_id is not empty %}
+<a href="{{ path('entity.node.canonical', {'node': content.field_linkto['#items'][0].target_id}) }}">
 {% endif %}
-  {{ title_prefix }}
-  {% if not page %}
-    <h3{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
+  {{ content.field_image }}
+  <div class="content">
+    {{ title_prefix }}
+    {% if not page %}
+      <h3{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
 
-  {% if display_submitted %}
-    <div class="posted">
-      {{ author_picture }}
-      <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
+    {% if display_submitted %}
+      <div class="posted">
+        {{ author_picture }}
+        <div{{ author_attributes }}>
+          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          {{ metadata }}
+        </div>
       </div>
-    </div>
-  {% endif %}
+    {% endif %}
 
-  {# We hide the comments and links now so that we can render them later. #}
-  <div{{ content_attributes }}>
-    {{ content|without('comment', 'links', 'field_tags', 'field_linkto') }}
+    {# We hide the comments and links now so that we can render them later. #}
+    <div{{ content_attributes }}>
+      {{ content|without('comment', 'links', 'field_tags', 'field_linkto', 'field_image') }}
+      {% if content.field_linkto['#items'][0].target_id is not empty %}
+        <p class="button large em-small">{{ 'En savoir plus'|t }}</p>
+      {% else %}
+        <p class="button large em-small disabled">{{ 'Coming soon'|t }}</p>
+      {% endif %}
+    </div>
   </div>
 {% if content.field_linkto %}
 </a>

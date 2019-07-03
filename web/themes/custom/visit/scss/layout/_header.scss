@@ -91,11 +91,12 @@ iframe {
 }
 
 .block-marquedusite{
+    position: relative;
     float:left;
     height: 50px;
     width: 50px;
     margin:5px 20px 5px 0;
-    z-index: 20;
+    z-index: 40;
 }
 .block-visit-branding{
     position: absolute;

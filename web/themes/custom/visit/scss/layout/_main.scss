@@ -3,7 +3,7 @@
 }
 .home-first{
     height: 100vh;
-    background-image: url('../images/hp_test_1.jpg');
+    background-image: url('../images/hp_background_1.jpg');
     background-size: cover;
     background-position: center;
     .home-title{
@@ -16,6 +16,9 @@
         background-position: top center;
     }
 }
+.zone2{
+    background: $light-gray;
+}
 .primary{
     color: $primary-color;
 }
@@ -25,24 +28,68 @@
 .em-small{
     font-family: $header-font-family;
 }
+.em-medium{
+    font-family: $header-font-family;
+    font-size: 1.3em;
+    line-height: 1.1em;
+}
 .em-big{
     font-family: $header-font-family;
-    font-size: 1.5em;
-    line-height: 1.3em;
+    font-size: 1.7em;
+    line-height: 1.5em;
 }
 .section{
-    padding: 100px 0 3em 0; 
+    padding: 100px 0 5em 0; 
 }
+
+/** Homepage teasers **/
+
+.home-teaser{
+    article{
+        background-color: $white;
+        a{
+            color: $black;
+            transition-duration: 0.5s;
+            &:hover, &:focus{
+                opacity: 0.7;
+            }
+        }
+        .content{
+            padding: 2.5em 2em 2.5em 2em;
+        }
+    }
+    margin-bottom: 2em;
+}
+
+/** end Homepage teasers **/
 
 /* Infos pratiques */
 .block-infospratiques{
-    border: 4px solid $primary-color;
+    //border: 1px solid $primary-color;
     padding: 2em;
+    margin: 10px;
+    ul{
+        list-style: none;
+        list-style-type: none;
+    }
 }
 /* fin infos pratiques */
 
 @include breakpoint(medium up){
     #content{
         
+    }
+    .block-infospratiques{
+        box-shadow: 0px 0px 15px -8px rgba($black,0.49);
+    }
+    .home-teaser{
+        article{
+            box-shadow: 0px 0px 15px -8px rgba($black,0.49);
+            .content{
+                .body{
+                    min-height: 160px;
+                }
+            }
+        }
     }
 }
