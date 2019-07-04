@@ -8,12 +8,14 @@
     background-position: center;
     .home-title{
         text-indent: -4000px;
-        margin-top: 11vh;
-        text-align: center;
-        height: 38vh;
+        margin-top: 2vh;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        text-align: left;
+        height: 20vh;
         background-image: url('../logo.svg');
         background-repeat: no-repeat;
-        background-position: top center;
+        background-position: top right;
     }
 }
 .zone2{
@@ -40,6 +42,21 @@
 }
 .section{
     padding: 100px 0 5em 0; 
+}
+
+#home-zone{
+    color: $white;
+    font-family: $header-font-family;
+    font-size: 1.4em;
+    text-align: center;
+    margin-right: 10px;
+
+    .place, .date{
+        display: inline-block;
+        background: rgba($black, .7);
+        padding: 3px 15px 3px 15px;
+        margin: 5px;
+    }
 }
 
 /** Homepage teasers **/
@@ -79,6 +96,18 @@
     #content{
         
     }
+    .home-first{
+        .home-title{
+            margin-right: 1em;
+            margin-bottom: 1em;
+            height: 30vh;
+        }
+    }
+    #home-zone{
+        font-size: 1.5em;
+        margin-right: 2em;
+        text-align: right;
+    }
     .block-infospratiques{
         box-shadow: 0px 0px 15px -8px rgba($black,0.49);
     }
@@ -91,5 +120,11 @@
                 }
             }
         }
+    }
+}
+
+@include breakpoint(large up){
+    #home-zone{
+        font-size: 1.8em;
     }
 }
