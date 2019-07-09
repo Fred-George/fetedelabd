@@ -24,7 +24,7 @@
     <div{{ content_attributes }}>
       {{ content|without('comment', 'links', 'field_tags', 'field_linkto', 'field_image') }}
       {% if content.field_linkto['#items'][0].target_id is not empty %}
-        <p class="button large em-small">{{ 'En savoir plus'|t }}</p>
+        <p class="button large em-small">{{ 'Find out more'|t }}</p>
       {% else %}
         <p class="button large em-small disabled">{{ 'Coming soon'|t }}</p>
       {% endif %}
