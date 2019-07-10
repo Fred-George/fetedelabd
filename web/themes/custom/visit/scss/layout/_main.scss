@@ -94,7 +94,24 @@
         list-style-type: none;
     }
 }
-/* fin infos pratiques */
+/* end infos pratiques */
+
+/* views filters */
+.views-exposed-form{
+    background: $primary-color;
+    font-family: $header-font-family;
+    padding: 20px 20px 15px 20px;
+    margin-bottom: 1em;
+    label{
+        color: $white;
+        font-size: 1.1em;
+    }
+    .button{
+        background-color: $secondary-color;
+        margin: 0;
+    }
+}
+/* end views filters */ 
 
 @include breakpoint(medium up){
     #content{
