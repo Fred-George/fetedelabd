@@ -13,6 +13,8 @@
       $(document).ready(function () {
         $("#header").sticky({ topSpacing: 0, zIndex: 450 });
         $(".home-first").enllax();
+        $(".home-end").enllax();
+        setActiveClasses();
       });
       
       /* Smooth scroll */
@@ -54,6 +56,10 @@
 
       /* Set active classes */
       $(window).on('scroll', function(){
+        setActiveClasses();
+      });
+
+      function setActiveClasses(){
         var win = $(window),
               windowPosition = win.scrollTop();
         // add activeClass to the div that is passing the top of the window
@@ -67,7 +73,7 @@
             $('#nav').find('a[href*="#' + this.id + '"]').removeClass('is-active').blur();
           }
         });
-      });
+      }
       
       /* Preloader and animations */
       
