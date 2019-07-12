@@ -1,23 +1,16 @@
-    <a href="{{ path('entity.node.canonical', {'node': row.nid}) }}">
-    {% for field in fields -%}
-      {{ field.separator }}
-      {%- if field.wrapper_element -%}
-        <{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
-      {%- endif %}
-      {%- if field.label -%}
-        {%- if field.label_element -%}
-          <{{ field.label_element }}{{ field.label_attributes }}>{{ field.label }}{{ field.label_suffix }}</{{ field.label_element }}>
-        {%- else -%}
-          {{ field.label }}{{ field.label_suffix }}
-        {%- endif %}
-      {%- endif %}
-      {%- if field.element_type -%}
-        <{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
-      {%- else -%}
-        {{ field.content }}
-      {%- endif %}
-      {%- if field.wrapper_element -%}
-        </{{ field.wrapper_element }}>
-      {%- endif %}
-    {%- endfor %}
+    {% if row._entity.field_detail_visible.value %}
+    <a href="{{ path('entity.node.canonical', {'node': row.nid}) }}" class="linked">
+    {% endif %}
+    <div class="columns small-2 image">{{ fields.field_image.content }}&nbsp;</div>
+    <div class="columns small-8">
+    <h3>{{ fields.title.content}}</h3>
+    <p class="teaser">{{ fields.body.content }}</p>
+    <p class="intervenants">{{ 'Intervenants'|t }} : {{ fields.field_intervenants.content }}</p>
+    {% if row._entity.field_detail_visible.value %}
+    <p class="button">{{ 'More info'|t }}</p>
+    {% endif %}
+    </div>
+    <div class="columns small-2 time">{{fields.field_heure.content}}</div>
+    {% if row._entity.field_detail_visible.value %}
     </a>
+    {% endif %}

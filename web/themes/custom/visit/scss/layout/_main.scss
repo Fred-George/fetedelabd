@@ -111,7 +111,42 @@
         margin: 0;
     }
 }
-/* end views filters */ 
+/* end views filters */
+
+/* Views */
+.views-element-container{
+    h2{
+        color: $secondary-color;
+        display: inline-block;
+        background: $primary-color;
+        padding: 3px 8px 3px 8px;
+        margin: 15px 0 30px 0;
+    }
+    a{
+        color: $black;
+        &.linked{
+            display: block;
+            background: $secondary-color;
+        }
+    }
+    .activite{
+        margin-bottom: 1em;
+    }
+    .intervenants{
+        font-style: italic;
+    }
+    .time{
+        font-family: $header-font-family;
+    }
+    p{
+        margin-bottom: 0;
+    }
+    .button{
+        margin-top:15px;
+    }
+}
+
+/* end Views */
 
 @include breakpoint(medium up){
     #content{
