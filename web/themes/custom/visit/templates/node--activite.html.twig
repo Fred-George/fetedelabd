@@ -1,0 +1,17 @@
+<article id="node-{{ node.id }}" {{ attributes.addClass('row') }}>
+
+    <div class="columns medium-6 large-4">
+        {{ content.field_image }}
+    </div>
+    <div class="columns medium-6 large-8">
+        <div class="top-info">
+            <div class="schedule">{{ content.field_date.0['#plain_text'] ~ ' ' ~ content.field_heure.0['#context'].value }}</div><br/>
+            {{ content.field_lieu }}
+            {{ content.field_lieu_autre }}
+        </div>
+        {{ content.body }}
+        <div class="intervenants">{{ 'Intervenants'|t }} : {{ content.field_intervenants.0['#plain_text'] }}</div>
+    </div>
+
+
+</article>

@@ -115,6 +115,10 @@
 
 /* Views */
 .views-element-container{
+    header{
+        font-family: $header-font-family;
+        margin-bottom: 1em;
+    }
     h2{
         color: $secondary-color;
         display: inline-block;
@@ -125,8 +129,14 @@
     a{
         color: $black;
         &.linked{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin: 0;
             display: block;
             background: $secondary-color;
+            &:hover{
+                background: darken($secondary-color, 3);
+            }
         }
     }
     .activite{
@@ -135,8 +145,11 @@
     .intervenants{
         font-style: italic;
     }
+    
     .time{
         font-family: $header-font-family;
+        text-align: center;
+        font-size: 1.3em;
     }
     p{
         margin-bottom: 0;
@@ -144,14 +157,44 @@
     .button{
         margin-top:15px;
     }
+    .field_stand{
+        text-align: right;
+        padding-right: 10px;
+    }
+    .exposant{
+        article{
+            margin-bottom: 10px;
+            border-bottom: 1px solid $secondary-color;
+        }
+    }
 }
 
 /* end Views */
 
-@include breakpoint(medium up){
-    #content{
-        
+/* Multiple contents */
+.path-node {
+    .top-info{
+        padding: 15px 0 15px 0;
     }
+    .schedule, .field_lieu, .field_lieu_autre{
+        display: inline-block;
+        font-family: $header-font-family;
+        background: $primary-color;
+        color: $white;
+        font-size: 1.2em;
+        padding: 1px 10px 1px 10px;
+        margin-bottom: 5px;
+    }
+
+    .intervenants{
+        font-style: italic;
+    }
+}
+
+/* End multiple contents */
+
+
+@include breakpoint(medium up){
     .home-first{
         .home-title{
             margin-right: 1em;
@@ -189,6 +232,30 @@
                     min-height: 160px;
                 }
             }
+        }
+    }
+    .views-element-container{
+        header{
+            font-size: 1.2em;
+        }
+        .exposant{
+            article{
+                height: 8em;
+            }
+        }
+    }
+    .field_stand{
+        margin-top: 10px;
+        color: $primary-color;
+        font-family: $header-font-family;
+        font-size: 1.2em;
+    }
+    .path-node {
+        .top-info{
+            text-align: right;
+        }
+        .schedule, .field_lieu, .field_lieu_autre{
+            font-size: 1.3em;
         }
     }
 }
