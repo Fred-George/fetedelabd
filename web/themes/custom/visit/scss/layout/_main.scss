@@ -129,13 +129,11 @@
     a{
         color: $black;
         &.linked{
-            padding-top: 10px;
-            padding-bottom: 10px;
-            margin: 0;
-            display: block;
-            background: $secondary-color;
-            &:hover{
-                background: darken($secondary-color, 3);
+            article{
+                background: $secondary-color;
+                &:hover{
+                    background: darken($secondary-color, 3);
+                }
             }
         }
     }
@@ -165,6 +163,37 @@
         article{
             margin-bottom: 10px;
             border-bottom: 1px solid $secondary-color;
+        }
+    }
+}
+.path-activites{
+    .views-element-container{
+        a.linked{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin: 0;
+            display: block;
+            background: $secondary-color;
+            &:hover{
+                background: darken($secondary-color, 3);
+            }
+        }
+    }
+}
+
+.path-exposants{
+    .views-element-container{
+        a.linked{
+            article{
+                text-align: right;
+                padding: 10px;
+                .button{
+                    margin: 0 10px 0 0;
+                }
+                h3{
+                    text-align: left;
+                }
+            }
         }
     }
 }
@@ -256,6 +285,20 @@
         }
         .schedule, .field_lieu, .field_lieu_autre{
             font-size: 1.3em;
+        }
+    }
+    .path-exposants{
+        .views-element-container{
+            a.linked{
+                article{
+                    position: relative;
+                    .button{
+                        position: absolute;
+                        bottom: 10px;
+                        right: 10px;
+                    }
+                }
+            }
         }
     }
 }

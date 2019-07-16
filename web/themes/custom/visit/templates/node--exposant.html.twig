@@ -1,7 +1,7 @@
 {% if node.field_detail_visible.value %}
 <a href="{{ path('entity.node.canonical', {'node': node.id}) }}" class="linked">
 {% endif %}
-<article id="node-{{ node.id }}" {{ attributes.addClass('columns', 'medium-6') }}>
+<article id="node-{{ node.id }}" {{ attributes.addClass('columns', 'medium-6', 'large-4', 'end') }}>
     {{ title_prefix }}
         {% if not page %}
         <div class="row">
@@ -10,6 +10,9 @@
     {{ title_suffix }}
     {% if not page %}
         <div class="columns small-2">{{ content.field_stand }}</div>
+    {% endif %}
+    {% if node.field_detail_visible.value %}
+        <p class="button small">{{ 'More info'|t }}</p>
     {% endif %}
 </article>
 {% if node.field_detail_visible.value %}
