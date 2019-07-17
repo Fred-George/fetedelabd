@@ -1,7 +1,11 @@
-{% if node.field_detail_visible.value %}
+{% if not page and node.field_detail_visible.value %}
 <a href="{{ path('entity.node.canonical', {'node': node.id}) }}" class="linked">
 {% endif %}
-<article id="node-{{ node.id }}" {{ attributes.addClass('columns', 'medium-6', 'large-4', 'end') }}>
+{% set classes = ['type-' ~ node.field_type_exposant.0.target_id] %}
+{% if not page %}
+{% set classes = classes|merge(['columns', 'medium-6', 'large-4', 'end']) %}
+{% endif %}
+<article id="node-{{ node.id }}" {{ attributes.addClass(classes) }}>
     {{ title_prefix }}
         {% if not page %}
         <div class="row">
@@ -10,11 +14,19 @@
     {{ title_suffix }}
     {% if not page %}
         <div class="columns small-2">{{ content.field_stand }}</div>
+        {% if node.field_detail_visible.value %}
+            <p class="button small">{{ 'More info'|t }}</p>
+        {% endif %}
     {% endif %}
-    {% if node.field_detail_visible.value %}
-        <p class="button small">{{ 'More info'|t }}</p>
+    {% if page %}
+        {{ content|without('field_type_exposant') }}
+        {% for key, category in node.field_type_exposant %}
+            <div class="field_type label-type-{{ node.field_type_exposant[key].target_id }}">
+                {{ content.field_type_exposant[key] }}
+            </div>
+        {% endfor %}
     {% endif %}
 </article>
-{% if node.field_detail_visible.value %}
+{% if not page and node.field_detail_visible.value %}
 </a>
 {% endif %}

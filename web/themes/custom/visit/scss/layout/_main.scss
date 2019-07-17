@@ -63,6 +63,40 @@
     }
 }
 
+/* Categories colors */
+
+$categories-colors: (
+    4: #d8de50,
+    24: #87c8c4,
+    7: #8abf56,
+    10: #b5588b,
+    8: #d2733a,
+    9: #9e415a,
+    5: #3d5b97,
+    23: #5ab698,
+    6: #5ab698,
+    11: #812840
+);
+.views-element-container{
+    @each $cat-col-key, $cat-col in $categories-colors {
+        .type-#{$cat-col-key} {
+            background-color: lighten($cat-col, 25%);
+        }
+        .linked .type-#{$cat-col-key} {
+            &:hover{
+                background-color: lighten($cat-col, 20%);
+            }
+        }
+    }
+}
+.field_type{
+    @each $cat-col-key, $cat-col in $categories-colors {
+        &.label-type-#{$cat-col-key} {
+            background-color: lighten($cat-col, 25%);
+        }
+    }
+}
+
 /** Homepage teasers **/
 
 .home-teaser{
@@ -128,14 +162,6 @@
     }
     a{
         color: $black;
-        &.linked{
-            article{
-                background: $secondary-color;
-                &:hover{
-                    background: darken($secondary-color, 3);
-                }
-            }
-        }
     }
     .activite{
         margin-bottom: 1em;
@@ -161,8 +187,8 @@
     }
     .exposant{
         article{
-            margin-bottom: 10px;
-            border-bottom: 1px solid $secondary-color;
+            padding-top: 10px;
+            border: 4px solid $white;
         }
     }
 }
@@ -185,8 +211,8 @@
     .views-element-container{
         a.linked{
             article{
-                text-align: right;
                 padding: 10px;
+                text-align: right;
                 .button{
                     margin: 0 10px 0 0;
                 }
@@ -222,6 +248,16 @@
 
 /* End multiple contents */
 
+/* Exposant detail */
+.node--type-exposant{
+    .field_type{
+        display: inline-block;
+        padding: 5px;
+        font-family: $header-font-family;
+    }
+}
+
+/* End exposant detail */
 
 @include breakpoint(medium up){
     .home-first{
@@ -289,8 +325,18 @@
     }
     .path-exposants{
         .views-element-container{
+            h3{
+                margin-top: 10px;
+                font-size: 1.3em;
+            }
             a.linked{
                 article{
+                    h3{
+                        margin-top: 0;
+                    }
+                    .field_stand{
+                        margin-top: 0;
+                    }
                     position: relative;
                     .button{
                         position: absolute;
