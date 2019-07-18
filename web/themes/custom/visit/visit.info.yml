@@ -12,6 +12,9 @@ base theme: zurb_foundation
 libraries:
  - visit/global
 
+ckeditor_stylesheets:
+ - css/ckeditor.css
+
 # Regions are output in the page.html.twig
 
 regions:

@@ -5,7 +5,9 @@
     <div class="columns small-8">
     <h3>{{ fields.title.content}}</h3>
     <p class="teaser">{{ fields.body.content }}</p>
+    {% if row._entity.field_intervenants.0.value %}
     <p class="intervenants">{{ 'Intervenants'|t }} : {{ fields.field_intervenants.content }}</p>
+    {% endif %}
     {% if row._entity.field_detail_visible.value %}
     <p class="button">{{ 'More info'|t }}</p>
     {% endif %}

@@ -14,8 +14,8 @@ footer{
     font-family: $header-font-family;
     .social-footer{
         float: right;
+        margin-right: 10px;
         .social-icons {
-            padding-right: 10px;
             a{
                 border-style: none;
             }
