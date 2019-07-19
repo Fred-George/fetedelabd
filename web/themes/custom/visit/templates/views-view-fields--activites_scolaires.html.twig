@@ -1,0 +1,16 @@
+    <div class="columns small-2 image">{{ fields.field_image.content }}&nbsp;</div>
+    <div class="columns small-8">
+    <h3>{{ fields.title.content}}</h3>
+    <div class="field_lieu">
+        {{ fields.field_lieu.content }}
+        {{ fields.field_lieu_autre.content }}
+    </div>
+    <p class="teaser">{{ fields.body.content }}</p>
+    {% if row._entity.field_intervenants.0.value %}
+    <p class="intervenants">{{ 'Intervenants'|t }} : {{ fields.field_intervenants.content }}</p>
+    {% endif %}
+    {% if row._entity.field_annee_scolaire.0.value %}
+    <p class="intervenants">{{ 'Public'|t }} : {{ fields.field_annee_scolaire.content }}</p>
+    {% endif %}
+    </div>
+    <div class="columns small-2 time">{{fields.field_heure.content}}</div>

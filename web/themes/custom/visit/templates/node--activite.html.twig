@@ -16,7 +16,15 @@
         &nbsp;-&nbsp;{{ content.field_heure }}
         {% endif %}
       </div><br/>
-      {{ content|without('field_image', 'field_date', 'field_heure') }}
+      {{ content|without('field_image', 'field_date', 'field_heure', 'field_intervenants') }}
+      {% if content.field_intervenants.0 %}
+          <div class="intervenants">
+            {{ 'Intervenants'|t }} : 
+            {% for key, item in content.field_intervenants if key|first != '#' %}
+                {{ item }}{% if content.field_intervenants[key + 1] %}, {% endif %}
+            {% endfor %}
+          </div>
+      {% endif %}
     </div>
   </div>
 </article>
