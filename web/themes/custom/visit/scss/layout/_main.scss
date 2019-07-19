@@ -268,6 +268,16 @@ $categories-colors: (
 
 /* End exposant detail */
 
+/* Activite detail */
+.node--type-activite{
+    .field_heure{
+        display: inline;
+    }
+}
+
+
+/* End Activite detail */
+
 @include breakpoint(medium up){
     .home-first{
         .home-title{
