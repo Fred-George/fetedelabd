@@ -248,6 +248,12 @@ $categories-colors: (
         font-size: 1.2em;
         padding: 1px 10px 1px 10px;
         margin-bottom: 5px;
+        a{
+            color: $white;
+            &:hover, &:focus{
+                text-decoration: underline;
+            }
+        }
     }
 
     .intervenants{

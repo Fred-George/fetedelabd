@@ -16,7 +16,10 @@
         &nbsp;-&nbsp;{{ content.field_heure }}
         {% endif %}
       </div><br/>
-      {{ content|without('field_image', 'field_date', 'field_heure', 'field_intervenants') }}
+      {% if content.field_lieu %}
+        <div class="field_lieu"><a href="{{ content.field_lieu.0['#url'] }}" >{{ content.field_lieu.0['#title'] }}</a> - {{ node.field_lieu.0.entity.field_stand.value }}</div>
+      {% endif %}
+      {{ content|without('field_image', 'field_date', 'field_heure', 'field_intervenants', 'field_lieu') }}
       {% if content.field_intervenants.0 %}
           <div class="intervenants">
             {{ 'Intervenants'|t }} : 
