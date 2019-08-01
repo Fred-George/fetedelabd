@@ -107,6 +107,12 @@ $categories-colors: (
 
 .home-teaser{
     article{
+        &.disabled{
+            opacity: .6;
+            h3{
+                color: $medium-gray;
+            }
+        }
         background-color: $white;
         a{
             color: $black;
@@ -202,6 +208,9 @@ $categories-colors: (
     }
 }
 .path-activites{
+    article{
+        margin-bottom: 1em;
+    }
     .views-element-container{
         a.linked{
             padding-top: 10px;
@@ -236,7 +245,7 @@ $categories-colors: (
 /* end Views */
 
 /* Multiple contents */
-.path-node {
+.path-node, .path-activites {
     .top-info{
         padding: 15px 0 15px 0;
     }
@@ -275,7 +284,7 @@ $categories-colors: (
 /* End exposant detail */
 
 /* Activite detail */
-.node--type-activite{
+.node--type-activite, .path-activites{
     .field_heure{
         display: inline;
     }

@@ -1,22 +1,35 @@
 <article id="node-{{ node.id }}" {{ attributes }}>
   <div{{ content_attributes.addClass('row') }}>
     {% if content.field_image.0 %}
+      {% if not page %}
+    <div class="columns medium-3">
+      {% else %}
     <div class="columns medium-4">
+      {% endif %}
       {{ content.field_image }}
     </div>
+    {% if not page %}
+    <div class="columns medium-9">
+      {% else %}
     <div class="columns medium-8">
+      {% endif %}
     {% else %}
     <div class="columns">
     {% endif %}
+      {{ title_prefix }}
+      {% if not page %}
+        <h3{{ title_attributes }}>{{ label }}</h3>
+      {% endif %}
+  {{ title_suffix }}
       <div class="schedule">
         {% for key, item in content.field_date if key|first != '#' %}
             {{ item }}{% if content.field_date[key + 1] %}, {% endif %}
         {% endfor %}
-        {% if content.field_heure is not empty %}
+        {% if node.field_heure.0 is not empty %}
         &nbsp;-&nbsp;{{ content.field_heure }}
         {% endif %}
       </div><br/>
-      {% if content.field_lieu %}
+      {% if node.field_lieu.0 %}
         <div class="field_lieu"><a href="{{ content.field_lieu.0['#url'] }}" >{{ content.field_lieu.0['#title'] }}</a> - {{ node.field_lieu.0.entity.field_stand.value }}</div>
       {% endif %}
       {{ content|without('field_image', 'field_date', 'field_heure', 'field_intervenants', 'field_lieu') }}

@@ -30,3 +30,17 @@ function visit_module_views_pre_render(Drupal\views\ViewExecutable $view) {
   // Update the view index to match the new number of rows.
   $view->total_rows = $new_row_index;
 }
+
+/**
+ * Implements hook_views_post_render().
+ */
+function visit_module_views_post_render(Drupal\views\ViewExecutable $view) {
+  if ($view->id() !== 'VIEW_ID' && $view->getDisplay()->getPluginId() !== 'page') {
+    return;
+  }
+  $request = \Drupal::request();
+  if ($route = $request->attributes->get(\Symfony\Cmf\Component\Routing\RouteObjectInterface::ROUTE_OBJECT)) {
+    $new_title = $view->getTitle();
+    $route->setDefault('_title', $new_title);
+  }
+}
