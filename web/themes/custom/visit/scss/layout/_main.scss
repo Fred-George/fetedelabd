@@ -203,7 +203,7 @@ $categories-colors: (
     .time{
         font-family: $header-font-family;
         text-align: center;
-        font-size: 1.3em;
+        font-size: 1em;
     }
     p{
         margin-bottom: 0;
@@ -314,6 +314,11 @@ $categories-colors: (
             margin-right: 1em;
             margin-bottom: 1em;
             height: 30vh;
+        }
+    }
+    .views-element-container{
+        .time{
+            font-size: 1.3em;
         }
     }
     #home-zone{
