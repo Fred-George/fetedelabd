@@ -106,11 +106,25 @@ $categories-colors: (
 /** Homepage teasers **/
 
 .home-teaser{
+    position: relative;
+    .comingsoon{
+        position: absolute;
+        width: 90%;
+        text-align: center;
+        top: 20px;
+        font-size: 2em;
+        font-family: $header-font-family;
+        span{
+            color: $white;
+            background-color: rgba($black,0.7);
+            padding: 10px;
+        }
+    }
     article{
         &.disabled{
             opacity: .6;
             h3{
-                color: $medium-gray;
+                color: $dark-gray;
             }
         }
         background-color: $white;
@@ -126,6 +140,7 @@ $categories-colors: (
         }
     }
     margin-bottom: 2em;
+    border-bottom: 2px solid $secondary-color;
 }
 
 /** end Homepage teasers **/
@@ -332,6 +347,7 @@ $categories-colors: (
                 }
             }
         }
+        border-bottom: none;
     }
     .views-element-container{
         header{
