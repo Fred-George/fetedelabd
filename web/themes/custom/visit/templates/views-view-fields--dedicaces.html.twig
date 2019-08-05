@@ -1,0 +1,8 @@
+    <div class="columns small-3 time">{{ fields.field_heure.content }}&nbsp;</div>
+    <div class="columns small-5">
+    {% if row._entity.field_auteur.0.value %}
+    <h3>{{ fields.field_auteur.content }}</h3>
+    {% endif %}
+    {{ fields.body.content }}
+    </div>
+    <div class="columns small-4">{{fields.field_lieu.content}}</div>
