@@ -30,7 +30,16 @@
         {% endif %}
       </div><br/>
       {% if node.field_lieu.0 %}
-        <div class="field_lieu"><a href="{{ content.field_lieu.0['#url'] }}" >{{ content.field_lieu.0['#title'] }}</a> - {{ node.field_lieu.0.entity.field_stand.value }}</div>
+        <div class="field_lieu">
+        {% if node.field_lieu.0.entity.field_detail_visible.value %}
+            <a href="{{ content.field_lieu.0['#url'] }}" >
+        {% endif %}
+        {{ content.field_lieu.0['#title'] }}
+        {% if node.field_lieu.0.entity.field_detail_visible.value %}
+            </a> 
+        {% endif %}
+        - {{ node.field_lieu.0.entity.field_stand.value }}
+        </div>
       {% endif %}
       {{ content|without('field_image', 'field_date', 'field_heure', 'field_intervenants', 'field_lieu') }}
       {% if content.field_intervenants.0 %}

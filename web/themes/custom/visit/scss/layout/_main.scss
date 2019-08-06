@@ -48,6 +48,9 @@ body{
 .section{
     padding: 100px 0 5em 0; 
 }
+.inline{
+    display: inline-block;
+}
 
 #home-zone{
     color: $white;
@@ -320,6 +323,44 @@ $categories-colors: (
 
 /* End Activite detail */
 
+/* Dedicaces */
+
+.dedicaces{
+    .dedicace{
+        border-bottom: 1px solid $secondary-color;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+        .field_heure{
+            color: $white;
+            background-color: $primary-color;
+            padding: 5px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+        .field_lieu{
+            color: $black;
+            background-color: $secondary-color;
+            padding: 5px;
+            a{
+                &:hover, &:focus{
+                    text-decoration: underline;
+                }
+            }
+        }
+        .body{
+            font-style: italic;
+            margin: 0 10px 0 0;
+        }
+        h3{
+            margin: 0 10px 0 0;
+        }
+    }
+}
+
+/* End Dedicaces */
 @include breakpoint(medium up){
     .home-first{
         .home-title{
@@ -412,6 +453,13 @@ $categories-colors: (
                     }
                 }
             }
+        }
+    }
+    .dedicaces{
+        column-count: 2;
+        h3{
+            position: relative;
+            top: 5px;
         }
     }
 }
