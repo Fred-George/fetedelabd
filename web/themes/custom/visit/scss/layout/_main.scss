@@ -355,6 +355,7 @@ $categories-colors: (
             margin: 0 10px 0 0;
         }
         h3{
+            font-size: 1.2em;
             margin: 0 10px 0 0;
         }
     }
@@ -456,11 +457,7 @@ $categories-colors: (
         }
     }
     .dedicaces{
-        column-count: 2;
-        h3{
-            position: relative;
-            top: 5px;
-        }
+        column-count: 3;
     }
 }
 
