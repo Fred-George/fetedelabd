@@ -21,6 +21,21 @@ footer{
             }
         }
     }
+    .hotel{
+        .row{
+            padding: 10px;
+        }
+    }
+    .button{
+        border: 1px solid $white;
+    }
+    a.visit{
+        color: $white;
+        &:hover{
+            color: $white;
+            text-decoration: underline;
+        }
+    }
 }
 .eu-cookie-compliance-banner{
     padding: 20px 0 0 0;

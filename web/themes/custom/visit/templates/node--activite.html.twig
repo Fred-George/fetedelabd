@@ -31,6 +31,7 @@
       </div><br/>
       {% if node.field_lieu.0 %}
         <div class="field_lieu">
+        {{ 'Stand'|t }}&nbsp;
         {% if node.field_lieu.0.entity.field_detail_visible.value %}
             <a href="{{ content.field_lieu.0['#url'] }}" >
         {% endif %}

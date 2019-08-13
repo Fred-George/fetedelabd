@@ -360,6 +360,13 @@ $categories-colors: (
         }
     }
 }
+/* Activités sur le stand */
+.block-views-block-activites-stand-block-1{
+    background-color: $secondary-color;
+    padding: 15px;
+}
+
+/* End activités sur le stand */
 
 /* End Dedicaces */
 @include breakpoint(medium up){
