@@ -25,6 +25,7 @@ footer{
         .row{
             padding: 10px;
         }
+        margin-bottom: 1em;
     }
     .button{
         border: 1px solid $white;
@@ -34,6 +35,14 @@ footer{
         &:hover{
             color: $white;
             text-decoration: underline;
+        }
+    }
+    .logos{
+        margin-bottom: 2em;
+        text-align: center;
+        .embedded-entity{
+            display: inline-block;
+            margin: 10px;
         }
     }
 }
