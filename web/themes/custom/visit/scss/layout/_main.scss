@@ -466,6 +466,15 @@ $categories-colors: (
     .dedicaces{
         column-count: 3;
     }
+    .atomium-logos{
+        background-color: #fff;
+        text-align: center;
+        padding: 10px;
+        .embedded-entity{
+            display: inline-block;
+            margin: 0 10px 0 10px;
+        }
+    }
 }
 
 @include breakpoint(large up){
