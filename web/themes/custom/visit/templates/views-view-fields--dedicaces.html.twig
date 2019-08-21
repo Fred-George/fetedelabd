@@ -6,12 +6,16 @@
     <div class="inline body">{{ fields.body.content }}</div>
     {% endif %}
     <div class="inline field_lieu">
-    {{ 'Stand'|t }}&nbsp;
-    {% if row._entity.field_lieu.0.entity.field_detail_visible.value %}
-    <a href="{{ path('entity.node.canonical', {'node': row._entity.field_lieu.0.entity.nid.value}) }}">
-    {% endif %}
-        {{fields.field_lieu.content}}&nbsp;-&nbsp;{{ row._entity.field_lieu.0.entity.field_stand.value }}
-    {% if row._entity.field_lieu.0.entity.field_detail_visible.value %}
-    </a>
+    {% if row._entity.field_lieu.0 %}
+        {{ 'Stand'|t }}&nbsp;
+        {% if row._entity.field_lieu.0.entity.field_detail_visible.value %}
+        <a href="{{ path('entity.node.canonical', {'node': row._entity.field_lieu.0.entity.nid.value}) }}">
+        {% endif %}
+            {{ row._entity.field_lieu.0.entity.title.value|raw }}&nbsp;-&nbsp;{{ row._entity.field_lieu.0.entity.field_stand.value }}
+        {% if row._entity.field_lieu.0.entity.field_detail_visible.value %}
+        </a>
+        {% endif %}
+    {% else %}
+        {{ fields.field_lieu_autre.content }}
     {% endif %}
     </div>
