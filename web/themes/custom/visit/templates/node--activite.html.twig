@@ -35,7 +35,7 @@
         {% if node.field_lieu.0.entity.field_detail_visible.value %}
             <a href="{{ content.field_lieu.0['#url'] }}" >
         {% endif %}
-        {{ content.field_lieu.0['#title'] }}
+        {{ content.field_lieu.0['#title']|raw }}
         {% if node.field_lieu.0.entity.field_detail_visible.value %}
             </a> 
         {% endif %}

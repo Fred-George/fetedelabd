@@ -31,6 +31,16 @@ body{
 .primary{
     color: $primary-color;
 }
+.views-element-container{
+    .primary{
+        a{
+            color: $primary-color;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
 .secondary{
     color: $secondary-color;
 }
@@ -209,10 +219,11 @@ $categories-colors: (
         }
     }
     .activite, .activite-scolaire{
-        margin-bottom: 1em;
+        margin-bottom: 1.5em;
     }
     .intervenants{
         font-style: italic;
+        color: $primary-color;
     }
     
     .time{

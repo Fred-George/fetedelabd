@@ -1,10 +1,21 @@
     <div class="columns medium-2 hide-for-small-only image">{{ fields.field_image.content }}&nbsp;</div>
-    <div class="columns small-8">
+    <div class="columns small-10">
     <h3>{{ fields.title.content}}</h3>
-    <div class="field_lieu">
-        {{ fields.field_lieu.content }}
-        {{ fields.field_lieu_autre.content }}
+    <div class="primary">
+           {% if row._entity.field_lieu.0 %}
+        {{ 'Stand'|t }}&nbsp;
+        {% if row._entity.field_lieu.0.entity.field_detail_visible.value %}
+        <a href="{{ path('entity.node.canonical', {'node': row._entity.field_lieu.0.entity.nid.value}) }}">
+        {% endif %}
+            {{ row._entity.field_lieu.0.entity.title.value|raw }}&nbsp;-&nbsp;{{ row._entity.field_lieu.0.entity.field_stand.value }}
+        {% if row._entity.field_lieu.0.entity.field_detail_visible.value %}
+        </a>
+        {% endif %}
+        {% else %}
+            {{ fields.field_lieu_autre.content }}
+        {% endif %}
     </div>
+    <div class="field_heure">{{ fields.field_heure.content }}</div>
     <p class="teaser">{{ fields.body.content }}</p>
     {% if row._entity.field_intervenants.0.value %}
     <p class="intervenants">{{ 'Intervenants'|t }} : {{ fields.field_intervenants.content }}</p>
@@ -13,4 +24,3 @@
     <p class="intervenants">{{ 'Public'|t }} : {{ fields.field_annee_scolaire.content }}</p>
     {% endif %}
     </div>
-    <div class="columns small-4 medium-2 time">{{fields.field_heure.content}}</div>
