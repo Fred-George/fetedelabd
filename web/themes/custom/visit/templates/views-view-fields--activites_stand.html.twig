@@ -1,4 +1,11 @@
+    {% if fields.field_image.content %}
+    <div class="columns small-2">
+    {{ fields.field_image.content }}
+    </div>
+    <div class="columns small-8">
+    {% else %}
     <div class="columns small-10">
+    {% endif %}
     <h4>{{ fields.title.content}}</h4>
     <p class="teaser">{{ fields.body.content }}</p>
     {% if row._entity.field_intervenants.0.value %}
