@@ -336,7 +336,7 @@ $categories-colors: (
 
 /* Dedicaces */
 
-.dedicaces{
+.dedicaces, .block-views-block-dedicaces-stand-block-1{
     .dedicace{
         border-bottom: 1px solid $secondary-color;
         margin-bottom: 10px;
@@ -371,8 +371,13 @@ $categories-colors: (
         }
     }
 }
+.block-views-block-dedicaces-stand-block-1{
+    .dedicaces{
+        padding: 15px;
+    }
+}
 /* Activités sur le stand */
-.block-views-block-activites-stand-block-1{
+.block-views-block-activites-stand-block-1, .block-views-block-dedicaces-stand-block-1{
     background-color: $secondary-color;
     padding: 15px;
 }
