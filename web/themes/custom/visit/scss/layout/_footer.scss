@@ -2,9 +2,7 @@
 
 .home-end{
     height: 40vh;
-    background-image: url('../images/hp_background_2.jpg');
-    background-size: cover;
-    background-position: top;
+    background-color: lighten($primary-color,20);
 }
 
 footer{
