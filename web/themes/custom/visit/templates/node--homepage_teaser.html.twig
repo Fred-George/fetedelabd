@@ -4,25 +4,15 @@
 {% endif %}
   {{ content.field_image }}
   <div class="content">
-    {{ title_prefix }}
-    {% if not page %}
-      <h3{{ title_attributes }}>{{ label }}</h2>
-    {% endif %}
-    {{ title_suffix }}
-
-    {% if display_submitted %}
-      <div class="posted">
-        {{ author_picture }}
-        <div{{ author_attributes }}>
-          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-          {{ metadata }}
-        </div>
-      </div>
-    {% endif %}
-
-    {# We hide the comments and links now so that we can render them later. #}
-    <div{{ content_attributes }}>
+    <div class="fixed-height-content">
+      {{ title_prefix }}
+      {% if not page %}
+        <h3{{ title_attributes }}>{{ label }}</h3>
+      {% endif %}
+      {{ title_suffix }}
       {{ content|without('comment', 'links', 'field_tags', 'field_linkto', 'field_image') }}
+    </div>
+    <div{{ content_attributes }}>
       {% if node.field_linkto.0 %}
         <p class="button large em-small">{{ 'Find out more'|t }}</p>
       {% else %}
