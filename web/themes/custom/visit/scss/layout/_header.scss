@@ -113,6 +113,7 @@ iframe {
     background: rgba($secondary-color, .9);
     box-shadow: 1px 0px 1px rgba($black, 0.3);
     position: absolute;
+    z-index: 450;
     .top-bar-left {
         width: 100%;
         nav{

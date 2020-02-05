@@ -11,6 +11,9 @@ body{
     position: relative;
     height: 100vh;
     background-color: lighten($primary-color,20);
+    background-image: url('../images/temp_background_2020_lighter.jpg');
+    background-size: cover;
+    background-position: center center;
     .home-title{
         text-indent: -4000px;
         margin-top: 5vh;
