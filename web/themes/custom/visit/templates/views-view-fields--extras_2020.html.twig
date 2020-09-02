@@ -1,0 +1,34 @@
+    {% if row._entity.field_detail_visible.value %}
+    <a href="{{ path('entity.node.canonical', {'node': row.nid}) }}" class="row linked">
+    {% endif %}
+    <div class="columns small-2 image">{{ fields.field_image.content }}&nbsp;</div>
+    <div class="columns small-10">
+    <h3>{{ fields.title.content}}</h3>
+    <div class="primary"><strong>
+           {% if row._entity.field_lieu.0 %}
+        {{ 'Stand'|t }}&nbsp;
+        {% if row._entity.field_lieu.0.entity.field_detail_visible.value and not row._entity.field_detail_visible.value %}
+        <a href="{{ path('entity.node.canonical', {'node': row._entity.field_lieu.0.entity.nid.value}) }}">
+        {% endif %}
+            {{ row._entity.field_lieu.0.entity.title.value|raw }}&nbsp;-&nbsp;{{ row._entity.field_lieu.0.entity.field_stand.value }}
+        {% if row._entity.field_lieu.0.entity.field_detail_visible.value and not row._entity.field_detail_visible.value %}
+        </a>
+        {% endif %}
+    {% else %}
+        {{ fields.field_lieu_autre.content }}
+        {% if row._entity.field_heure.0 %}
+            - {{ fields.field_heure.content }}
+        {% endif %}
+    {% endif %}
+    </strong></div>
+    <p class="teaser">{{ fields.body.content }}</p>
+    {% if row._entity.field_intervenants.0.value %}
+    <p class="intervenants">{{ 'Intervenants'|t }} : {{ fields.field_intervenants.content }}</p>
+    {% endif %}
+    {% if row._entity.field_detail_visible.value %}
+    <p class="button">{{ 'More info'|t }}</p>
+    {% endif %}
+    </div>
+    {% if row._entity.field_detail_visible.value %}
+    </a>
+    {% endif %}
