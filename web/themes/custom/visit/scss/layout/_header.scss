@@ -98,11 +98,12 @@ iframe {
     margin:5px 20px 5px 0;
     z-index: 40;
 }
+
 .block-visit-branding{
-    position: absolute;
-    top: 12px;
-    left: 45px;
+    width: 100%;
+    text-align: center;
     font-family: $header-font-family;
+    padding: 10px 0 0 0;
     a{
         color: $black;
     }
