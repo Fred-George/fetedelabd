@@ -11,7 +11,7 @@ body{
     position: relative;
     height: 100vh;
     background-color: lighten($primary-color,20);
-    background-image: url('../images/hp_background_2020.jpg');
+    background-image: url('../images/hp_background_2021.jpg');
     background-size: cover;
     background-position: center center;
     .home-title{
@@ -390,7 +390,7 @@ $categories-colors: (
     .home-first{
         .home-title{
             margin-bottom: 1em;
-            height: 30vh;
+            height: 40vh;
         }
     }
     .views-element-container{

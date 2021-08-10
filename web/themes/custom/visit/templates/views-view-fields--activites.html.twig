@@ -6,11 +6,10 @@
     <h3>{{ fields.title.content}}</h3>
     <div class="primary">
            {% if row._entity.field_lieu.0 %}
-        {{ 'Stand'|t }}&nbsp;
         {% if row._entity.field_lieu.0.entity.field_detail_visible.value and not row._entity.field_detail_visible.value %}
         <a href="{{ path('entity.node.canonical', {'node': row._entity.field_lieu.0.entity.nid.value}) }}">
         {% endif %}
-            {{ row._entity.field_lieu.0.entity.title.value|raw }}&nbsp;-&nbsp;{{ row._entity.field_lieu.0.entity.field_stand.value }}
+            {{ row._entity.field_lieu.0.entity.title.value|raw }}
         {% if row._entity.field_lieu.0.entity.field_detail_visible.value and not row._entity.field_detail_visible.value %}
         </a>
         {% endif %}

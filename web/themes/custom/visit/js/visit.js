@@ -17,6 +17,11 @@
         setActiveClasses();
       });
       
+      /* Datepicker */
+      if($('.bef-datepicker').datepicker){
+        $('.bef-datepicker').datepicker({ dateFormat: 'dd-mm-yy', firstDay: 1 });
+      }
+
       /* Smooth scroll */
       $('a[href*="#"]')
       // Remove links that don't actually link to anything
