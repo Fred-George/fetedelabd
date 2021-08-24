@@ -20,11 +20,11 @@
     {% endif %}
     {% if page %}
         {{ content|without('field_type_exposant') }}
-        {% for key, category in node.field_type_exposant %}
+       {# {% for key, category in node.field_type_exposant %}
             <div class="field_type label-type-{{ node.field_type_exposant[key].target_id }}">
                 {{ content.field_type_exposant[key] }}
             </div>
-        {% endfor %}
+        {% endfor %} #}
     {% endif %}
 </article>
 {% if not page and node.field_detail_visible.value %}

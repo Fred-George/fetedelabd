@@ -5,13 +5,12 @@
     {% if row._entity.body.value is not empty %}
     <div class="inline body">{{ fields.body.content }}</div>
     {% endif %}
-    <div class="inline field_lieu">
+    <div class="field_lieu">
     {% if row._entity.field_lieu.0 %}
-        {{ 'Stand'|t }}&nbsp;
         {% if row._entity.field_lieu.0.entity.field_detail_visible.value %}
         <a href="{{ path('entity.node.canonical', {'node': row._entity.field_lieu.0.entity.nid.value}) }}">
         {% endif %}
-            {{ row._entity.field_lieu.0.entity.title.value|raw }}&nbsp;-&nbsp;{{ row._entity.field_lieu.0.entity.field_stand.value }}
+            {{ row._entity.field_lieu.0.entity.title.value|raw }}
         {% if row._entity.field_lieu.0.entity.field_detail_visible.value %}
         </a>
         {% endif %}
@@ -19,3 +18,8 @@
         {{ fields.field_lieu_autre.content }}
     {% endif %}
     </div>
+    {% if row._entity.field_lien_info_booking.0 %}
+    <div class="field_link">
+        <a href="{{ row._entity.field_lien_info_booking.0.uri }}" target="_blank">{{ 'Info/Réservation'|t }}</a>
+    </div>
+    {% endif %}

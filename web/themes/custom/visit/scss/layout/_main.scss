@@ -7,6 +7,9 @@ body{
 #content{
     padding: 10px;
 }
+strong{
+    font-family: $header-font-family;
+}
 .home-first{
     position: relative;
     height: 100vh;
@@ -233,7 +236,7 @@ $categories-colors: (
         font-size: 1em;
     }
     p{
-        margin-bottom: 0;
+        margin-bottom: 5px;
     }
     .button{
         margin-top:15px;
@@ -360,6 +363,12 @@ $categories-colors: (
                 &:hover, &:focus{
                     text-decoration: underline;
                 }
+            }
+        }
+        .field_link{
+            a{
+                color: $primary-color;
+                text-decoration: underline;
             }
         }
         .body{
