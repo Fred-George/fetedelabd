@@ -22,12 +22,15 @@
       {% endif %}
   {{ title_suffix }}
       <div class="schedule">
-        {{ content.field_date_range }}
+        {{ node.field_date_range.0.value|date("d/m") }}
+        {% if node.field_date_range.0.value != node.field_date_range.0.end_value %}
+        -&nbsp;{{ node.field_date_range.0.end_value|date("d/m") }}
+        {% endif %}
         {% for key, item in content.field_date if key|first != '#' %}
             {{ item }}{% if content.field_date[key + 1] %}, {% endif %}
         {% endfor %}
         {% if node.field_heure.0 is not empty %}
-        &nbsp;-&nbsp;{{ content.field_heure }}
+        &nbsp;-&nbsp;{{ node.field_heure.0.value }}
         {% endif %}
       </div><br/>
       {% if node.field_lieu.0 %}

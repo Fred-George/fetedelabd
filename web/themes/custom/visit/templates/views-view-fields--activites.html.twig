@@ -4,6 +4,20 @@
     <div class="columns small-2 image">{{ fields.field_image.content }}&nbsp;</div>
     <div class="columns small-10">
     <h3>{{ fields.title.content}}</h3>
+    
+    <div class="schedule">
+        {{ row._entity.field_date_range.0.value|date("d/m") }}
+        {% if row._entity.field_date_range.0.value != row._entity.field_date_range.0.end_value %}
+        -&nbsp;{{ row._entity.field_date_range.0.end_value|date("d/m") }}
+        {% endif %}
+        {% if row._entity.field_heure.0 is not empty %}
+        {% if row._entity.hasTranslation(language) %}
+            &nbsp;-&nbsp;{{ row._entity.translation(language).field_heure.0.value|raw }}
+        {% else %}
+            &nbsp;-&nbsp;{{ row._entity.field_heure.0.value|raw }}
+        {% endif %}
+        {% endif %}
+      </div><br/> 
     <div class="primary">
            {% if row._entity.field_lieu.0 %}
         {% if row._entity.field_lieu.0.entity.field_detail_visible.value and not row._entity.field_detail_visible.value %}

@@ -36,9 +36,24 @@ function visit_preprocess_node(&$variables) {
  * Add convenience variables and template suggestions
  */
 function visit_preprocess_page(&$variables) {
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $variables['language'] = $language;
 }
 
 /**
  * Implements template_preprocess_views_view().
  */
-function visit_preprocess_views_view(&$variables) {}
+function visit_preprocess_views_view(&$variables) {
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $variables['language'] = $language;
+}
+
+function visit_preprocess_views_view_fields__dedicaces(&$variables) {
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $variables['language'] = $language;
+}
+
+function visit_preprocess_views_view_fields__activites(&$variables) {
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $variables['language'] = $language;
+}

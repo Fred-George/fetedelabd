@@ -13,23 +13,20 @@ strong{
 .home-first{
     position: relative;
     height: 100vh;
-    background-color: lighten($primary-color,20);
-    background-image: url('../images/hp_background_2021.jpg');
-    background-size: cover;
-    background-position: center center;
+    background-color: $light-gray;
     .home-title{
         text-indent: -4000px;
-        margin-top: 5vh;
+        margin-top: 8vh;
         margin-bottom: 10px;
         text-align: center;
         height: 30vh;
         background-image: url('../logo.svg');
         background-repeat: no-repeat;
-        background-position: top left;
+        background-position: center center;
     }
 }
 .zone2{
-    background: $light-gray;
+    background: $primary-color;
 }
 .primary{
     color: $primary-color;
@@ -76,6 +73,7 @@ strong{
         bottom: 10px;
         width: 100%;
         margin-top: 30px;
+        text-align: center;
         .place, .date{
             color: $secondary-color;
             display: inline-block;

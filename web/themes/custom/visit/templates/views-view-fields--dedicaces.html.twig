@@ -1,16 +1,20 @@
-    <div class="inline field_heure">{{ fields.field_heure.content }}</div>
     {% if row._entity.field_auteur.0.value %}
-    <h3 class="inline">{{ fields.field_auteur.content }}</h3>
+    <h3>{{ fields.field_auteur.content }}</h3>
     {% endif %}
+    <div class="inline field_heure">{{ fields.field_date2.content }} - {{ fields.field_heure.content }}</div>
     {% if row._entity.body.value is not empty %}
-    <div class="inline body">{{ fields.body.content }}</div>
+    <div class="body">{{ fields.body.content }}</div>
     {% endif %}
     <div class="field_lieu">
     {% if row._entity.field_lieu.0 %}
         {% if row._entity.field_lieu.0.entity.field_detail_visible.value %}
         <a href="{{ path('entity.node.canonical', {'node': row._entity.field_lieu.0.entity.nid.value}) }}">
         {% endif %}
+        {% if row._entity.field_lieu.0.entity.hasTranslation(language) %}
+            {{ row._entity.field_lieu.0.entity.translation(language).title.value|raw }}
+        {% else %}
             {{ row._entity.field_lieu.0.entity.title.value|raw }}
+        {% endif %}
         {% if row._entity.field_lieu.0.entity.field_detail_visible.value %}
         </a>
         {% endif %}
@@ -20,6 +24,6 @@
     </div>
     {% if row._entity.field_lien_info_booking.0 %}
     <div class="field_link">
-        <a href="{{ row._entity.field_lien_info_booking.0.uri }}" target="_blank">{{ 'Info/Réservation'|t }}</a>
+        <a href="{{ row._entity.field_lien_info_booking.0.uri }}" target="_blank">{{ 'Info/Booking'|t }}</a>
     </div>
     {% endif %}

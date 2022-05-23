@@ -1,7 +1,13 @@
-     <div class="inline field_heure">{{ fields.field_heure.content }}</div>
-    {% if row._entity.field_auteur.0.value %}
-    <h3 class="inline">{{ fields.field_auteur.content }}</h3>
+     {% if row._entity.field_auteur.0.value %}
+    <h3>{{ fields.field_auteur.content }}</h3>
     {% endif %}
+     <div class="inline field_heure">{{ fields.field_date2.content }} - {{ fields.field_heure.content }}</div>
+    
     {% if row._entity.body.value is not empty %}
     <div class="inline body">{{ fields.body.content }}</div>
+    {% endif %}
+    {% if row._entity.field_lien_info_booking.0 %}
+    <div class="field_link">
+        <a href="{{ row._entity.field_lien_info_booking.0.uri }}" target="_blank">{{ 'Info/Booking'|t }}</a>
+    </div>
     {% endif %}
